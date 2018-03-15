@@ -11,7 +11,7 @@ U Skeletonu mi zase některé věci nevyhovovaly, nebo chyběly. PureCSS jsem za
 
 Vzal jsem tedy SASS verzi Skeletonu, předělal co se mi nelíbilo, doplnil co se mi líbilo z jiných frameworků, a vzešlo z toho toto. Obsahuje vše, co standardně používám pro své projekty. A samozřejmě postupně rozšiřuji při práci na projektech. Tohle je asi 368 verze :-)
 
-## Ukázky
+## Ukázky
 
 Ukázky a kód můžete omrknout na https://paveltajdus.github.io/pt-base/
 
