@@ -1,0 +1,141 @@
+// Grid based on Foundation Float Grid and 
+// https://webdesign.tutsplus.com/tutorials/a-simple-responsive-grid-made-even-better-with-sass--cms-21540
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.row {
+  max-width: $grid-container-width;
+  margin-right: auto;
+  margin-left: auto;
+  @extend %clearfix;
+}
+
+.row .row {
+  margin-right: -$grid-gutter-small;
+  margin-left: -$grid-gutter-small;
+
+  @media only screen and (min-width: $bp-larger-than-mobile) {
+    margin-right: -$grid-gutter-large;
+    margin-left: -$grid-gutter-large;
+  }
+}
+
+.row.column,
+.row.columns,
+.column.row.row,
+.row.row.columns {
+  float: none;
+}
+
+.row .column.row.row,
+.row .row.row.columns {
+  margin-right: 0;
+  margin-left: 0;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.expanded.row {
+  max-width: none;
+}
+
+.expanded.row .expanded.row,
+.row.expanded .row .row {
+  margin-right: -$grid-gutter-small;
+  margin-left: -$grid-gutter-small;
+
+  @media only screen and (min-width: $bp-larger-than-mobile) {
+    margin-right: -$grid-gutter-large;
+    margin-left: -$grid-gutter-large;
+  }
+}
+
+.row.expanded .row {
+  max-width: none;
+}
+
+.row:not(.expanded) .row {
+  max-width: none;
+}
+
+.column,
+.columns {
+  width: 100%;
+  float: left;
+  padding-right: $grid-gutter-small;
+  padding-left: $grid-gutter-small;
+
+  @media only screen and (min-width: $bp-larger-than-mobile) {
+    padding-right: $grid-gutter-large;
+    padding-left: $grid-gutter-large;
+  }
+}
+
+.column:last-child:not(:first-child):not(.row),
+.columns:last-child:not(:first-child):not(.row) {
+  float: right;
+}
+
+@for $i from 1 through $grid-total-columns {
+  .small-#{$i} {
+    width: 100% / $grid-total-columns * $i;
+  }
+}
+
+@media only screen and (min-width: $bp-larger-than-mobile) {
+  @for $i from 1 through $grid-total-columns {
+    .medium-#{$i} {
+      width: 100% / $grid-total-columns * $i;
+    }
+
+    // You can set this in _settings.scss
+    @if $grid-advanced {
+      .medium-offset-#{$i} {
+        margin-left: 100% / $grid-total-columns * $i;
+      }
+    }
+
+    // You can set this in _settings.scss
+    @if $grid-advanced  {
+      .medium-push-#{$i} {
+        position: relative;
+        left: 100% / $grid-total-columns * $i;
+      }
+      .medium-pull-#{$i} {
+        position: relative;
+        left: -(100% / $grid-total-columns * $i);
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $bp-larger-than-tablet) {
+  @for $i from 1 through $grid-total-columns {
+    .large-#{$i} {
+      width: 100% / $grid-total-columns * $i;
+    }
+    // You can set this in _settings.scss
+    @if $grid-advanced {
+      .large-offset-#{$i} {
+        margin-left: 100% / $grid-total-columns * $i;
+      }
+    }
+
+    // You can set this in _settings.scss
+    @if $grid-advanced  {
+      .large-push-#{$i} {
+        position: relative;
+        left: 100% / $grid-total-columns * $i;
+      }
+      .large-pull-#{$i} {
+        position: relative;
+        left: -(100% / $grid-total-columns * $i);
+      }
+    }
+  }
+}

@@ -1,0 +1,83 @@
+/**
+ * Mixins and functions
+ */
+
+@import "scss/functions";
+@import "scss/mixins";
+
+/**
+ * Settings
+ */
+
+/* Grid Variables */
+$grid-container-width: rem-calc(960) !default;
+$grid-total-columns: 12 !default;
+$grid-gutter-small: rem-calc(10) !default;
+// Gutter large is used on devices larger than mobile
+$grid-gutter-large: rem-calc(15) !default;
+// Advanced grid means grid offset, push and pull
+$grid-advanced: true !default;
+
+/* Breakpoints */
+$bp-larger-than-mobile: rem-calc(480) !default;
+$bp-larger-than-tablet: rem-calc(750) !default;
+$bp-larger-than-desktop: rem-calc(1000) !default;
+
+/* Colors */
+$color-primary: #2b90d9 !default;
+$color-success: #10a887;
+$color-alert: #da3c3c;
+$color-border: #ccc !default;
+$color-link: #1eaedb !default;
+$color-font: #222 !default;
+
+/* Typography */
+$global-font-size: 100% !default;
+$font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-secondary: $font-family;
+$global-line-height: 1.5 !default;
+// Spacing used on headings and elements
+$global-spacing: rem-calc(20) !default;
+
+// Type Scale - Suggested ratios
+$_minor-second:     1.067 !default;
+$_major-second:     1.125 !default;
+$_minor-third:      1.200 !default;
+$_major-third:      1.250 !default;
+$_perfect-fourth:   1.333 !default;
+$_augmented-fourth: 1.414 !default;
+$_perfect-fifth:    1.500 !default;
+$_golden-ratio:     1.618 !default;
+// Ratio for Primary scale - on mobile
+$scale-ratio: $_major-second !default;
+// Ratio for Secondary scale - on tablet and larger
+$scale-ratio-secondary: 1.150 !default;
+
+/* Misc */
+$global-radius: 3px !default;
+
+/**
+ * Import partials
+ */
+
+// Base files
+@import "scss/normalize";
+@import "scss/base";
+@import "scss/typography";
+
+// Modules
+@import "scss/grid";
+@import "scss/buttons";
+@import "scss/menu";
+@import "scss/forms";
+@import "scss/lists";
+@import "scss/code";
+@import "scss/tables";
+@import "scss/spacing";
+@import "scss/media-queries";
+@import "scss/responsive-embed";
+@import "scss/thumbnail";
+@import "scss/callout";
+
+// Custom styles
+@import "scss/custom";

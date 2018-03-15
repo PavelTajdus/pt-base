@@ -1,0 +1,46 @@
+// Base Styles
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+body {
+  line-height: $global-line-height;
+  font-weight: normal;
+  font-family: $font-family;
+  color: $color-font;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Links
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+a {
+  color: $color-link;
+  &:hover {
+    color: darken($color-link, 10);
+  }
+
+  &:visited {
+    color: $color-font;
+  }
+}
+
+// Images
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+img {
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 100%;
+  height: auto;
+  -ms-interpolation-mode: bicubic;
+}
+
+// Misc
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+hr {
+  clear: both;
+  max-width: 75rem;
+  height: 0;
+  margin: 1.25rem auto;
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 1px solid $color-border;
+  border-left: 0;
+}

@@ -1,0 +1,41 @@
+// Spacing
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+input,
+textarea,
+select,
+fieldset {
+  margin-bottom: $global-spacing / 2;
+}
+
+pre,
+blockquote,
+dl,
+figure,
+table,
+p,
+ul,
+ol,
+form {
+  margin-top: 0;
+  margin-bottom: $global-spacing/2;
+  @media only screen and (min-width: $bp-larger-than-mobile) {
+    margin-bottom: $global-spacing;
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: $global-spacing/2;
+  margin-bottom: $global-spacing/2;
+  @media only screen and (min-width: $bp-larger-than-mobile) {
+    margin-top: $global-spacing;
+    margin-bottom: $global-spacing;
+  }
+}

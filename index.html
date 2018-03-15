@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>PT-Base</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="dist/pt-base.min.css">
+  <!-- JS -->
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+</head>
+
+<body>
+  <div class="row column">
+    <h1>PT-Base (pracovní verze)</h1>
+    <p>Je to osobní Mikro-framework (3,8 Kb). Set oblíbených a používaných stylů pro rychlý start projektu.</p>
+    <p>No jo no. Není to nejlepší název, ale lepší jsem holt nevymyslel. Je to základ (báze) pro mé projekty, proto PT-Base.</p>
+    <p>Používám (používal jsem) Foundation a Skeleton, hrál si s PureCSS, ale u každého mi něco nadbývá, nebo něco chybí, nebo něco vadí. Foundation je super, ale je tam toho prostě moc, a ikdyž povypínám věci, které nevyužiju, stále je výsledný CSS soubor zbytečně velký. PT-Base má minifikovaný a Gzipnutý 3,8 Kb. A to se vyplatí.</p>
+    <p>U Skeletonu mi zase některé věci nevyhovovaly, nebo chyběly. PureCSS jsem zase vůbec nepřišel na chuť. Proto jsem si vytvořil takové své best of CSS Framework.</p>
+    <p>Vzal jsem tedy SASS verzi Skeletonu, předělal co se mi nelíbilo, doplnil co se mi líbilo z jiných frameworků, a vzešlo z toho toto. Obsahuje vše, co standardně používám pro své projekty.</p>
+  </div>
+  <div class="row">
+    <!-- Grid -->
+    <div class="small-12 column" id="grid">
+      <h2 class="docs-header">The grid</h6>
+        <p>The grid is a
+          <u>12-column fluid grid with a max width of 960px</u>, that shrinks with the browser/device at smaller sizes. The
+          max width can be changed with one line of CSS and all columns will resize accordingly. The syntax is simple and
+          it makes coding responsive much easier. Go ahead, resize the browser. </p>
+    </div>
+  </div>
+
+  <div class="example-grid docs-example row">
+    <div class="column">
+      <div class="row display">
+        <div class="medium-1 large-2 column">One</div>
+        <div class="medium-11 large-10 columns">Eleven</div>
+      </div>
+      <div class="row display">
+        <div class="medium-2 columns">Two</div>
+        <div class="medium-10 columns">
+          <div class="row">
+            <div class="medium-6 columns">Five</div>
+            <div class="medium-6 columns">+ Five</div>
+          </div>
+        </div>
+      </div>
+      <div class="row display">
+        <div class="medium-3 columns">Three</div>
+        <div class="medium-9 columns">Nine</div>
+      </div>
+      <div class="row display">
+        <div class="medium-4 columns">Four</div>
+        <div class="medium-8 columns">Eight</div>
+      </div>
+      <div class="row display">
+        <div class="medium-5 columns">Five</div>
+        <div class="medium-7 columns">Seven</div>
+      </div>
+      <div class="row display">
+        <div class="medium-6 columns">Six</div>
+        <div class="medium-6 columns">Six</div>
+      </div>
+      <div class="row display">
+        <div class="medium-7 columns">Seven</div>
+        <div class="medium-5 columns">Five</div>
+      </div>
+      <div class="row display">
+        <div class="medium-8 columns">Eight</div>
+        <div class="medium-4 columns">Four</div>
+      </div>
+      <div class="row display">
+        <div class="medium-9 columns">Nine</div>
+        <div class="medium-3 columns">Three</div>
+      </div>
+      <div class="row display">
+        <div class="medium-10 columns">Ten</div>
+        <div class="medium-2 columns">Two</div>
+      </div>
+      <div class="row display">
+        <div class="medium-11 columns">Eleven</div>
+        <div class="medium-1 column">One</div>
+      </div>
+      <!-- offset -->
+      <div class="row display">
+        <div class="medium-offset-1 medium-5 columns">Offset One + Five</div>
+        <div class="medium-6 column">Six</div>
+      </div>
+      <div class="row display">
+        <div class="medium-4 columns">Four</div>
+        <div class="medium-offset-4 medium-4 columns">Four</div>
+      </div>
+    </div>
+  </div>
+
+<!-- CODE EXAMPLE -->
+<div class="row column">
+<pre><code class="prettyprint">&#x3C;div class=&#x22;row&#x22;&#x3E;
+  &#x3C;!-- 1 on medium, 2 on large --&#x3E;
+  &#x3C;div class=&#x22;medium-1 large-2 column&#x22;&#x3E;One&#x3C;/div&#x3E;
+  &#x3C;!-- 11 on medium, 10 on large --&#x3E;
+  &#x3C;div class=&#x22;medium-11 large-10 columns&#x22;&#x3E;Eleven&#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+&#x3C;div class=&#x22;row&#x22;&#x3E;
+  &#x3C;div class=&#x22;medium-2 columns&#x22;&#x3E;Two&#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;medium-10 columns&#x22;&#x3E;
+    &#x3C;!-- Nesting? No problem! --&#x3E;
+    &#x3C;div class=&#x22;row&#x22;&#x3E;
+      &#x3C;div class=&#x22;medium-6 columns&#x22;&#x3E;Five&#x3C;/div&#x3E;
+      &#x3C;div class=&#x22;medium-6 columns&#x22;&#x3E;+ Five&#x3C;/div&#x3E;
+    &#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+&#x3C;div class=&#x22;row&#x22;&#x3E;
+  &#x3C;div class=&#x22;medium-3 columns&#x22;&#x3E;Three&#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;medium-9 columns&#x22;&#x3E;Nine&#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+&#x3C;div class=&#x22;row&#x22;&#x3E;
+  &#x3C;div class=&#x22;medium-4 columns&#x22;&#x3E;Four&#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;medium-8 columns&#x22;&#x3E;Eight&#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+&#x3C;div class=&#x22;row&#x22;&#x3E;
+  &#x3C;div class=&#x22;medium-5 columns&#x22;&#x3E;Five&#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;medium-7 columns&#x22;&#x3E;Seven&#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+&#x3C;div class=&#x22;row&#x22;&#x3E;
+  &#x3C;div class=&#x22;medium-6 columns&#x22;&#x3E;Six&#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;medium-6 columns&#x22;&#x3E;Six&#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+&#x3C;div class=&#x22;row&#x22;&#x3E;
+  &#x3C;div class=&#x22;medium-7 columns&#x22;&#x3E;Seven&#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;medium-5 columns&#x22;&#x3E;Five&#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+&#x3C;div class=&#x22;row&#x22;&#x3E;
+  &#x3C;div class=&#x22;medium-8 columns&#x22;&#x3E;Eight&#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;medium-4 columns&#x22;&#x3E;Four&#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+&#x3C;div class=&#x22;row&#x22;&#x3E;
+  &#x3C;div class=&#x22;medium-9 columns&#x22;&#x3E;Nine&#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;medium-3 columns&#x22;&#x3E;Three&#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+&#x3C;div class=&#x22;row&#x22;&#x3E;
+  &#x3C;div class=&#x22;medium-10 columns&#x22;&#x3E;Ten&#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;medium-2 columns&#x22;&#x3E;Two&#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+&#x3C;div class=&#x22;row&#x22;&#x3E;
+  &#x3C;div class=&#x22;medium-11 columns&#x22;&#x3E;Eleven&#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;medium-1 column&#x22;&#x3E;One&#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+&#x3C;!-- offset --&#x3E;
+&#x3C;div class=&#x22;row&#x22;&#x3E;
+  &#x3C;div class=&#x22;medium-offset-1 medium-5 columns&#x22;&#x3E;Offset One + Five&#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;medium-6 column&#x22;&#x3E;Six&#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+&#x3C;div class=&#x22;row&#x22;&#x3E;
+  &#x3C;div class=&#x22;medium-4 columns&#x22;&#x3E;Four&#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;medium-offset-4 medium-4 columns&#x22;&#x3E;Four&#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+</code></pre></div>
+
+  <!-- Expanded grid -->
+  <div class="row column">
+    <h2 class="docs-header">The expanded grid</h6>
+      <p>The grid shrinks with the browser/device at smaller sizes. The max width can be changed with one line of CSS and all
+        columns will resize accordingly. The syntax is simple and it makes coding responsive much easier. Go ahead, resize
+        the browser. </p>
+  </div>
+  <div class="expanded row display">
+    <div class="medium-2 columns">Two</div>
+    <div class="medium-10 columns">Ten</div>
+  </div>
+  <div class="expanded row display">
+    <div class="medium-2 columns">Two</div>
+    <div class="medium-10 columns">
+      <div class="row">
+        <div class="medium-6 columns">Five</div>
+        <div class="medium-6 columns">+ Five</div>
+      </div>
+    </div>
+  </div>
+
+<!-- CODE EXAMPLE -->
+<div class="row column">
+<pre><code class="prettyprint">&#x3C;div class=&#x22;expanded row&#x22;&#x3E;
+  &#x3C;div class=&#x22;medium-2 columns&#x22;&#x3E;Two&#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;medium-10 columns&#x22;&#x3E;Ten&#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+&#x3C;div class=&#x22;expanded row&#x22;&#x3E;
+  &#x3C;div class=&#x22;medium-2 columns&#x22;&#x3E;Two&#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;medium-10 columns&#x22;&#x3E;
+    &#x3C;div class=&#x22;row&#x22;&#x3E;
+      &#x3C;div class=&#x22;medium-6 columns&#x22;&#x3E;Five&#x3C;/div&#x3E;
+      &#x3C;div class=&#x22;medium-6 columns&#x22;&#x3E;+ Five&#x3C;/div&#x3E;
+    &#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+</code></pre></div>
+
+  <!-- Typography -->
+  <div class="row column" id="typography">
+    <h2 class="docs-header">Typography</h6>
+      <p>Type is all set with the <code>rems</code>, so font-sizes and spacial relationships can be responsively sized based
+        on a single <code>&lt;html&gt;</code> font-size property. Out of the box, Skeleton never changes the <code>&lt;html&gt;</code> font-size, but it's there in case you need it for your project. All measurements are still base 10 though so, an
+        <code>&lt;h1&gt;</code> with <code>5.0rem</code> font-size just means <code>50px</code>.</p>
+      <div class="docs-example">
+        <p><strong>The typography base</strong> is <a href="http://www.google.com/fonts/specimen/Raleway">Raleway</a> served
+          by Google, set at 15rem (15px) over a 1.6 line height (24px). Other type basics like <a href="#">anchors</a>,
+          <strong>strong</strong>, <em>emphasis</em>, and
+          <u>underline</u> are all obviously included.</p>
+        <p>
+          <blockquote>
+            Those people who think they know everything are a great annoyance to those of us who do.
+            <cite>Isaac Asimov</cite>
+          </blockquote>
+          <blockquote>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta natus sunt, at cum distinctio reprehenderit accusamus inventore enim nemo neque rerum nesciunt! Amet excepturi recusandae, vel dolores doloremque quisquam nisi!</p>
+            <p>Those people who think they know everything are a great annoyance to those of us who do.</p>
+            <cite>Isaac Asimov</cite>
+          </blockquote>
+          <p>In my dream last night, I saw <abbr title="John Ronald Reuel">J. R. R.</abbr> Tolkien and George <abbr title="Raymond Richard">R. R.</abbr> Martin hanging out on Sunset <abbr title="Boulevard">Blvd</abbr>.</p>
+        </p>
+        <p><strong>Headings</strong> create a family of distinct sizes each with specific <code>letter-spacing</code>,
+          <code>line-height</code>, and <code>margins</code>.</p>
+
+        <h1>Heading <code>&lt;h1&gt;</code></h1>
+        <h2>Heading <code>&lt;h2&gt;</code></h2>
+        <h3>Heading <code>&lt;h3&gt;</code></h3>
+        <h4>Heading <code>&lt;h4&gt;</code></h4>
+        <h5>Heading <code>&lt;h5&gt;</code></h5>
+        <h6>Heading <code>&lt;h6&gt;</code></h6>
+      </div>
+  </div>
+
+<!-- CODE EXAMPLE -->
+<div class="row column">
+<pre><code class="prettyprint">&#x3C;h1&#x3E;Heading &#x3C;code&#x3E;&#x3C;h1&#x3E;&#x3C;/code&#x3E;&#x3C;/h1&#x3E;
+&#x3C;h2&#x3E;Heading &#x3C;code&#x3E;&#x3C;h2&#x3E;&#x3C;/code&#x3E;&#x3C;/h2&#x3E;
+&#x3C;h3&#x3E;Heading &#x3C;code&#x3E;&#x3C;h3&#x3E;&#x3C;/code&#x3E;&#x3C;/h3&#x3E;
+&#x3C;h4&#x3E;Heading &#x3C;code&#x3E;&#x3C;h4&#x3E;&#x3C;/code&#x3E;&#x3C;/h4&#x3E;
+&#x3C;h5&#x3E;Heading &#x3C;code&#x3E;&#x3C;h5&#x3E;&#x3C;/code&#x3E;&#x3C;/h5&#x3E;
+&#x3C;h6&#x3E;Heading &#x3C;code&#x3E;&#x3C;h6&#x3E;&#x3C;/code&#x3E;&#x3C;/h6&#x3E;
+</code></pre></div>
+
+  <!-- Buttons -->
+  <div class="row column" id="buttons">
+    <h2 class="docs-header">Buttons</h6>
+      <p>Buttons come in two basic flavors in Skeleton. The standard <code>&lt;button&gt;</code> element is plain, whereas the
+        <code>.button-primary</code> button is vibrant and prominent. Button styles are applied to a number of appropriate
+        form elements, but can also be arbitrarily attached to anchors with a <code>.button</code> class. You can change size of button simply just changin <code>font-size</code>.</p>
+      <div class="docs-example">
+        <div>
+          <a class="button" href="#">Anchor button</a>
+          <a class="button success" href="#">Success button</a>
+          <a class="button alert" href="#">Alert button</a>
+          <button class="button">Button element</button>
+          <input class="button" type="submit" value="Submit input">
+          <input class="button" type="button" value="Button input">
+        </div>
+      </div>
+  </div>
+
+<!-- CODE EXAMPLE -->
+<div class="row column">
+<pre><code class="prettyprint">&#x3C;a class=&#x22;button&#x22; href=&#x22;#&#x22;&#x3E;Anchor button&#x3C;/a&#x3E;
+&#x3C;a class=&#x22;button success&#x22; href=&#x22;#&#x22;&#x3E;Success button&#x3C;/a&#x3E;
+&#x3C;a class=&#x22;button alert&#x22; href=&#x22;#&#x22;&#x3E;Alert button&#x3C;/a&#x3E;
+&#x3C;button class=&#x22;button&#x22;&#x3E;Button element&#x3C;/button&#x3E;
+&#x3C;input class=&#x22;button&#x22; type=&#x22;submit&#x22; value=&#x22;Submit input&#x22;&#x3E;
+&#x3C;input class=&#x22;button&#x22; type=&#x22;button&#x22; value=&#x22;Button input&#x22;&#x3E;
+</code></pre></div>
+
+<!-- Buttons -->
+  <div class="row column" id="menu">
+    <h2 class="docs-header">Menu</h6>
+      <p>Základní styly pro horizontální menu.</p>
+      <div class="docs-example">
+<ul class="menu">
+  <li><a href="#menu">Odkaz</a></li>
+  <li><a href="#menu" class="active">Aktivní odkaz</a></li>
+  <li><a href="#menu">Odkaz</a></li>
+  <li><a href="#menu">Odkaz</a></li>
+  <li><a href="#menu">Odkaz</a></li>
+</ul>
+      </div>
+  </div>
+
+<!-- CODE EXAMPLE -->
+<div class="row column">
+<pre><code class="prettyprint">&lt;ul class=&quot;menu&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#menu&quot;&gt;Odkaz&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#menu&quot; class=&quot;active&quot;&gt;Aktivní odkaz&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#menu&quot;&gt;Odkaz&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#menu&quot;&gt;Odkaz&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#menu&quot;&gt;Odkaz&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre></div>
+
+  <!-- Forms -->
+  <div class="row column" id="forms">
+    <h2 class="docs-header">Forms</h6>
+      <p>Forms are a huge pain, but hopefully these styles make it a bit easier. All inputs, select, and buttons are normalized
+        for a common height cross-browser so inputs can be stacked or placed alongside each other.</p>
+      <div class="docs-example docs-example-forms">
+        <form class="row column">
+          <div class="row">
+            <div class="medium-6 columns">
+              <label for="exampleEmailInput">Your email</label>
+              <input class="u-full-width" type="email" placeholder="test@mailbox.com" id="exampleEmailInput">
+            </div>
+            <div class="medium-6 columns">
+              <label for="exampleRecipientInput">Reason for contacting</label>
+              <select class="u-full-width" id="exampleRecipientInput">
+                <option value="Option 1">Questions</option>
+                <option value="Option 2">Admiration</option>
+                <option value="Option 3">Can I get your number?</option>
+              </select>
+            </div>
+          </div>
+          <label for="exampleMessage">Message</label>
+          <textarea class="u-full-width" placeholder="Hi Dave &hellip;" id="exampleMessage"></textarea>
+          <label class="example-send-yourself-copy">
+            <input type="checkbox">
+            <span class="label-body">Send a copy to yourself</span>
+          </label>
+          <input class="button" type="submit" value="Submit">
+        </form>
+      </div>
+  </div>
+
+<!-- CODE EXAMPLE -->
+<div class="row column">
+<pre><code class="prettyprint">&#x3C;form class=&#x22;row column&#x22;&#x3E;
+  &#x3C;div class=&#x22;row&#x22;&#x3E;
+    &#x3C;div class=&#x22;medium-6 columns&#x22;&#x3E;
+      &#x3C;label for=&#x22;exampleEmailInput&#x22;&#x3E;Your email&#x3C;/label&#x3E;
+      &#x3C;input class=&#x22;u-full-width&#x22; type=&#x22;email&#x22; placeholder=&#x22;test@mailbox.com&#x22; id=&#x22;exampleEmailInput&#x22;&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;medium-6 columns&#x22;&#x3E;
+      &#x3C;label for=&#x22;exampleRecipientInput&#x22;&#x3E;Reason for contacting&#x3C;/label&#x3E;
+      &#x3C;select class=&#x22;u-full-width&#x22; id=&#x22;exampleRecipientInput&#x22;&#x3E;
+        &#x3C;option value=&#x22;Option 1&#x22;&#x3E;Questions&#x3C;/option&#x3E;
+        &#x3C;option value=&#x22;Option 2&#x22;&#x3E;Admiration&#x3C;/option&#x3E;
+        &#x3C;option value=&#x22;Option 3&#x22;&#x3E;Can I get your number?&#x3C;/option&#x3E;
+      &#x3C;/select&#x3E;
+    &#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;label for=&#x22;exampleMessage&#x22;&#x3E;Message&#x3C;/label&#x3E;
+  &#x3C;textarea class=&#x22;u-full-width&#x22; placeholder=&#x22;Hi Dave &#x26;hellip;&#x22; id=&#x22;exampleMessage&#x22;&#x3E;&#x3C;/textarea&#x3E;
+  &#x3C;label class=&#x22;example-send-yourself-copy&#x22;&#x3E;
+    &#x3C;input type=&#x22;checkbox&#x22;&#x3E;
+    &#x3C;span class=&#x22;label-body&#x22;&#x3E;Send a copy to yourself&#x3C;/span&#x3E;
+  &#x3C;/label&#x3E;
+  &#x3C;input class=&#x22;button&#x22; type=&#x22;submit&#x22; value=&#x22;Submit&#x22;&#x3E;
+&#x3C;/form&#x3E;
+</code></pre></div>
+
+  <!-- Lists -->
+  <div class="row column" id="lists">
+    <h2 class="docs-header">Lists</h6>
+      <div class="row docs-example">
+        <div class="medium-6 columns">
+          <ul>
+            <li>Unordered lists have basic styles</li>
+            <li>
+              They use the circle list style
+              <ul>
+                <li>Nested lists styled to feel right</li>
+                <li>Can nest either type of list into the other</li>
+              </ul>
+            </li>
+            <li>Just more list items mama san</li>
+          </ul>
+        </div>
+        <div class="medium-6 columns">
+          <ol>
+            <li>Ordered lists also have basic styles</li>
+            <li>
+              They use the decimal list style
+              <ul>
+                <li>Ordered and unordered can be nested</li>
+                <li>Can nest either type of list into the other</li>
+              </ul>
+            </li>
+            <li>Last list item just for the fun</li>
+          </ol>
+        </div>
+      </div>
+  </div>
+
+<!-- CODE EXAMPLE -->
+<div class="row column">
+<pre><code class="prettyprint">&#x3C;ul&#x3E;
+  &#x3C;li&#x3E;Unordered lists have basic styles&#x3C;/li&#x3E;
+  &#x3C;li&#x3E;
+    They use the circle list style
+    &#x3C;ul&#x3E;
+      &#x3C;li&#x3E;Nested lists styled to feel right&#x3C;/li&#x3E;
+      &#x3C;li&#x3E;Can nest either type of list into the other&#x3C;/li&#x3E;
+    &#x3C;/ul&#x3E;
+  &#x3C;/li&#x3E;
+  &#x3C;li&#x3E;Just more list items mama san&#x3C;/li&#x3E;
+&#x3C;/ul&#x3E;
+
+&#x3C;ol&#x3E;
+  &#x3C;li&#x3E;Ordered lists also have basic styles&#x3C;/li&#x3E;
+  &#x3C;li&#x3E;
+    They use the decimal list style
+    &#x3C;ul&#x3E;
+      &#x3C;li&#x3E;Ordered and unordered can be nested&#x3C;/li&#x3E;
+      &#x3C;li&#x3E;Can nest either type of list into the other&#x3C;/li&#x3E;
+    &#x3C;/ul&#x3E;
+  &#x3C;/li&#x3E;
+  &#x3C;li&#x3E;Last list item just for the fun&#x3C;/li&#x3E;
+&#x3C;/ol&#x3E;
+</code></pre></div>
+
+  <!-- Code -->
+  <div class="row column" id="code">
+    <h2 class="docs-header">Code</h6>
+      <p>Code styling is kept basic – just wrap anything in a <code>&lt;code&gt;</code> and it will appear like <code>this</code>.
+        For blocks of code, wrap a <code>&lt;code&gt;</code> with a <code>&lt;pre&gt;</code>.</p>
+      <div class="docs-example">
+        <pre><code class="prettyprint">.some-class {
+  background-color: red;
+}</code></pre>
+      </div>
+  </div>
+
+  <!-- Tables -->
+  <div class="row column" id="tables">
+    <h2 class="docs-header">Tables</h6>
+      <p>Be sure to use properly formed table markup with <code>&lt;thead&gt;</code> and <code>&lt;tbody&gt;</code> when building
+        a <code>table</code>.</p>
+      <div class="docs-example">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Age</th>
+              <th>Sex</th>
+              <th>Location</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Dave Gamache</td>
+              <td>26</td>
+              <td>Male</td>
+              <td>San Francisco</td>
+            </tr>
+            <tr>
+              <td>Dwayne Johnson</td>
+              <td>42</td>
+              <td>Male</td>
+              <td>Hayward</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  </div>
+
+<!-- CODE EXAMPLE -->
+<div class="row column">
+<pre><code class="prettyprint">&#x3C;table class=&#x22;u-full-width&#x22;&#x3E;
+  &#x3C;thead&#x3E;
+    &#x3C;tr&#x3E;
+      &#x3C;th&#x3E;Name&#x3C;/th&#x3E;
+      &#x3C;th&#x3E;Age&#x3C;/th&#x3E;
+      &#x3C;th&#x3E;Sex&#x3C;/th&#x3E;
+      &#x3C;th&#x3E;Location&#x3C;/th&#x3E;
+    &#x3C;/tr&#x3E;
+  &#x3C;/thead&#x3E;
+  &#x3C;tbody&#x3E;
+    &#x3C;tr&#x3E;
+      &#x3C;td&#x3E;Dave Gamache&#x3C;/td&#x3E;
+      &#x3C;td&#x3E;26&#x3C;/td&#x3E;
+      &#x3C;td&#x3E;Male&#x3C;/td&#x3E;
+      &#x3C;td&#x3E;San Francisco&#x3C;/td&#x3E;
+    &#x3C;/tr&#x3E;
+    &#x3C;tr&#x3E;
+      &#x3C;td&#x3E;Dwayne Johnson&#x3C;/td&#x3E;
+      &#x3C;td&#x3E;42&#x3C;/td&#x3E;
+      &#x3C;td&#x3E;Male&#x3C;/td&#x3E;
+      &#x3C;td&#x3E;Hayward&#x3C;/td&#x3E;
+    &#x3C;/tr&#x3E;
+  &#x3C;/tbody&#x3E;
+&#x3C;/table&#x3E;  
+</code></pre></div>
+
+  <!-- Queries -->
+  <div class="row column" id="queries">
+    <h2 class="docs-header">Media queries</h6>
+      <p>Skeleton uses media queries to serve its scalable grid, but also has a list of queries for convenience of styling your
+        site across devices. The queries are mobile-first, meaning they target <code>min-width</code>. Mobile-first queries
+        are how Skeleton's grid is built and is the preferrable method of organizing CSS. It means all styles outside of
+        a query apply to all devices, then larger devices are targeted for enhancement. This prevents small devices from
+        having to parse tons of unused CSS. The sizes for the queries are:</p>
+      <div class="docs-example row">
+        <div class="medium-6 columns">
+          <ul>
+            <li><strong>Desktop HD</strong>: 1200px</li>
+            <li><strong>Desktop</strong>: 1000px</li>
+            <li><strong>Tablet</strong>: 750px</li>
+          </ul>
+        </div>
+        <div class="medium-6 columns">
+          <ul>
+            <li><strong>Phablet</strong>: 550px</li>
+            <li><strong>Mobile</strong>: 400px</li>
+          </ul>
+        </div>
+      </div>
+  </div>
+
+
+  <!-- Responsive Embed -->
+  <div class="row">
+    <div class="column">
+      <h2 class="docs-header">Responsive embed</h2>
+      <p>To make sure embedded content maintains its aspect ratio as the width of the screen changes, wrap the <code>iframe</code>,
+        <code>object</code>, <code>embed</code>, or <code>video</code> in a container with the <code>.responsive-embed</code>        class. Add ratio classes to change the aspect ratio of responsive embeds. The default ratio is 4:3. The <code>.widescreen</code> class will change the container's aspect ratio to 16:9.</p>
+    </div>
+  <div class="large-6 columns" id="embed">
+    <div class="responsive-embed">
+      <iframe width="420" height="315" src="https://www.youtube.com/embed/mM5_T-F1Yn4" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+      <!-- CODE EXAMPLE -->
+
+<pre><code class="prettyprint">&#x3C;div class=&#x22;responsive-embed&#x22;&#x3E;
+  &#x3C;iframe width=&#x22;420&#x22; height=&#x22;315&#x22; src=&#x22;https://www.youtube.com/embed/mM5_T-F1Yn4&#x22; frameborder=&#x22;0&#x22; allowfullscreen&#x3E;&#x3C;/iframe&#x3E;
+&#x3C;/div&#x3E;
+</code></pre>
+  </div>
+
+<div class="large-6 columns" id="embed">
+  <div class="responsive-embed widescreen">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/WUgvvPRH7Oc" frameborder="0" allowfullscreen></iframe>
+  </div>
+
+  <!-- CODE EXAMPLE -->
+<pre><code class="prettyprint">&#x3C;div class=&#x22;responsive-embed widescreen&#x22;&#x3E;
+  &#x3C;iframe width=&#x22;560&#x22; height=&#x22;315&#x22; src=&#x22;https://www.youtube.com/embed/WUgvvPRH7Oc&#x22; frameborder=&#x22;0&#x22; allowfullscreen&#x3E;&#x3C;/iframe&#x3E;
+&#x3C;/div&#x3E;
+</code></pre>
+</div>
+</div>
+
+<!-- Thumbnail -->
+<div class="row column" id="thumbnail">
+  <h2 class="docs-header">Thumbnail</h6>
+    <p>The <code>.thumbnail</code> class can be applied directly to an &#x3C;img&#x3E; element, or an &#x3C;a&#x3E; that wraps it. Make sure the &#x3C;img&#x3E; has an alt attribute that describes the contents of the image.</p>
+    <div class="row">
+      <div class="medium-4 column"><img class="thumbnail" src="http://via.placeholder.com/350x250" alt="Image placeholder."></div>
+      <div class="medium-4 column"><a href="#thumbnail" class="thumbnail"><img src="http://via.placeholder.com/350x250" alt="Image placeholder."></a></div>
+      <div class="medium-4 column"><img class="thumbnail" src="http://via.placeholder.com/350x250" alt="Image placeholder."></div>
+      <div class="medium-4 column"><a href="#thumbnail" class="thumbnail"><img src="http://via.placeholder.com/350x250" alt="Image placeholder."></a></div>
+      <div class="medium-4 column"><img class="thumbnail" src="http://via.placeholder.com/350x250" alt="Image placeholder."></div>
+      <div class="medium-4 column"><a href="#thumbnail" class="thumbnail"><img src="http://via.placeholder.com/350x250" alt="Image placeholder."></a></div>
+    </div>
+</div>
+
+<!-- Callout -->
+<div class="row column" id="callout">
+  <h2 class="docs-header">Callout</h6>
+    <p>A callout is just an element with a <code>.callout</code> class applied. You can put any kind of content inside. If you need close button, add <code>.close</code> class to <code>.callout</code> and add <code>&#x3C;a class=&#x22;close&#x22; href=&#x22;#&#x22;&#x3E;&#xD7;&#x3C;/a&#x3E;</code> to code.</p>
+    <div>
+      <div id="co1" class="callout close">
+        <h5>This is a callout.</h5>
+        <p>It has an easy to override visual style, and is appropriately subdued.</p>
+        <a href="#callout">It's dangerous to go alone, take this.</a>
+        <a class="close" onclick="closeCallout('co1')" href="javascript:void(0);">×</a>
+      </div>
+
+      <div class="callout primary">
+        <h5>This is a primary callout without close button</h5>
+        <p>It has an easy to override visual style, and is appropriately subdued.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, eligendi. Reiciendis eaque illo natus ipsum laborum cupiditate sint ab, magni libero, enim perspiciatis nihil esse nemo veniam laudantium dignissimos fuga.</p>
+        
+      </div>
+
+      <div id="co3" class="callout close success">
+        <h5>This is a success callout</h5>
+        <a href="#callout">It's dangerous to go alone, take this.</a>
+        <a class="close" onclick="closeCallout('co3')" href="javascript:void(0);">×</a>
+      </div>
+
+      <div id="co4" class="callout close alert">
+        <h5>This is a alert callout</h5>
+        <p>It has an easy to override visual style, and is appropriately subdued.</p>
+        <a href="#callout">It's dangerous to go alone, take this.</a>
+        <a class="close" onclick="closeCallout('co4')" href="javascript:void(0);">×</a>
+      </div>
+    </div>
+</div>
+
+  <!-- Utilities and Misc. -->
+  <div class="row column" id="utilities">
+    <h2 class="docs-header">Utilities</h6>
+      <p>Skeleton has a number of small utility classes that act as easy-to-use helpers. Sometimes it's better to use a utility
+        class than create a whole new class just to float an element.</p>
+
+
+<!-- CODE EXAMPLE -->
+<pre>
+<code class="prettyprint">/* Utility Classes */
+
+/* Make element full width */
+.u-full-width {
+  width: 100%;
+  box-sizing: border-box; }
+
+/* Make sure elements don't run outside containers (great for images in columns) */
+.u-max-full-width {
+  max-width: 100%;
+  box-sizing: border-box; }
+
+/* Float either direction */
+.u-pull-right {
+  float: right; }
+.u-pull-left {
+  float: left; }
+
+/* Clear a float */
+.u-cf {
+  content: "";
+  display: table;
+  clear: both; }
+</code>
+</pre>
+
+  </div>
+<script>
+  // Simple vanilla JS function for closing callout
+  function closeCallout($id) {
+    var x = document.getElementById($id);
+    if (x.style.display === 'none') {
+        x.style.display = 'block';
+    } else {
+        x.style.display = 'none';
+    }
+}
+</script>
+</body>
+
+</html>

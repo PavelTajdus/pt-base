@@ -1,0 +1,22 @@
+.thumbnail {
+    display: inline-block;
+    padding: 4px;
+    margin-bottom: 20px;
+    line-height: $global-line-height;
+    background-color: #fff;
+    border: 1px solid $color-border;
+    transition: box-shadow 200ms ease-out;
+}
+
+a.thumbnail {
+    transition: box-shadow 200ms ease-out;
+}
+
+a.thumbnail:hover,
+a.thumbnail:focus {
+    box-shadow: 0 0 6px 1px rgba(43, 166, 203, 0.5);
+}
+
+a.thumbnail image {
+    box-shadow: none;
+}

@@ -1,0 +1,42 @@
+button,
+.button {
+  color: white;
+  background-color: $color-primary;
+  line-height: 1rem;
+  text-decoration: none;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+  font-family: inherit;
+  padding: 0.85em 1em;
+  margin: 0 0 1rem 0;
+  -webkit-appearance: none;
+  border: 1px solid transparent;
+  border-radius: $global-radius;
+  transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  font-size: $global-font-size;
+
+  // Hover and Focus
+  &:hover,
+  &:focus {
+    color: white;
+    background-color: darken($color-primary, 15%);
+  } 
+  
+  // Button colors
+  &.success {
+    background-color: $color-success;
+
+    &:hover,
+  &:focus {
+    background-color: darken($color-success, 10%);
+  } 
+  }
+  &.alert {
+    background-color: $color-alert;
+    &:hover,
+  &:focus {
+    background-color: darken($color-alert, 10%);
+  } 
+  }
+}

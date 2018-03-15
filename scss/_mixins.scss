@@ -1,0 +1,37 @@
+%clearfix {
+    *zoom: 1;
+    &:before,
+    &:after {
+        content: " ";
+        display: block;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+
+// Mixin that will include the fall back px declaration as well as the calculated rem value.
+@mixin fontSize($size) {
+  font-size: $size;
+  font-size: rem-calc($size);
+}
+
+// Mixin for callout
+@mixin color-callout($color) {
+    border: 1px solid darken($color,10);
+    background-color: $color;
+    color: white;
+
+    h1, h2, h3, h4, h5, h6, a {
+        color: white;
+    }
+
+    a {
+        color: white;
+
+        &:hover, &:focus {
+            color: darken(white,10);
+        }
+    }
+}

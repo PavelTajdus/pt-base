@@ -1,0 +1,39 @@
+// Lists
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+ul,
+ol,
+dl {
+  margin-bottom: $global-spacing;
+  list-style-position: outside;
+  line-height: 1.6;
+}
+
+li {
+  font-size: inherit;
+}
+
+ul {
+  margin-left: $global-spacing;
+  list-style-type: disc;
+}
+
+ol {
+  margin-left: $global-spacing;
+}
+
+ul ul,
+ol ul,
+ul ol,
+ol ol {
+  margin-left: $global-spacing;
+  margin-bottom: 0;
+}
+
+dl {
+  margin-bottom: $global-spacing;
+}
+
+dl dt {
+  margin-bottom: 0.3rem;
+  font-weight: bold;
+}

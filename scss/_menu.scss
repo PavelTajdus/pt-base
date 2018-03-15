@@ -1,0 +1,25 @@
+.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    @extend %clearfix;
+    
+    li {
+        display: block;
+        float: left;
+    }
+    a {
+        display: block;
+        padding: rem-calc(4) rem-calc(10);
+        color: $color-font;
+        text-decoration: none;
+        &:hover,
+        &:focus {
+            background-color: #f7f7f7;
+        }
+        &.active {
+            background-color: $color-primary;
+            color: white;
+        }
+    }
+}

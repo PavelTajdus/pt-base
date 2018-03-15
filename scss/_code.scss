@@ -1,0 +1,21 @@
+// Code
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+code {
+  padding: .15rem .3rem;
+  margin: 0;
+  font-size: 90%;
+  white-space: nowrap;
+  background: #f9f9f9;
+  border: 1px solid $color-border;
+  border-radius: $global-radius;
+}
+
+pre > code {
+  display: block;
+  padding: 1rem 1.5rem;
+  white-space: pre-wrap;
+  overflow: hidden;
+  overflow-x:scroll
+}
+

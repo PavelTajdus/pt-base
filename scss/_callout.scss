@@ -1,0 +1,48 @@
+.callout {
+    position: relative;
+    margin: 0 0 $global-spacing 0;
+    padding: 1rem;
+    border: 1px solid $color-border;
+    border-radius: $global-radius;
+    background-color: lighten($color-border, 15);
+    color: #0a0a0a;
+    a.close {
+        color: inherit;
+        position: absolute;
+        text-decoration: none;
+        right: 1rem;
+        top: 1.4rem;
+        opacity: .4;
+        transition: opacity .15s;
+        font-size: 1.5rem;
+        line-height: 0;
+        &:hover,
+        &:focus {
+            opacity: 1;
+        }
+    }
+}
+
+.callout> :first-child {
+    margin-top: 0;
+}
+
+.callout.close> :nth-last-child(2) {
+    margin-bottom: 0;
+}
+
+.callout:not(.close)> :last-child {
+    margin-bottom: 0;
+}
+
+.callout.primary {
+    @include color-callout($color-primary);
+}
+
+.callout.success {
+    @include color-callout($color-success);
+}
+
+.callout.alert {
+    @include color-callout($color-alert);
+}

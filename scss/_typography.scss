@@ -1,0 +1,74 @@
+// Typography
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+html {
+  font-size: $global-font-size;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #222;
+  font-family: $font-family-secondary;
+  line-height: $global-line-height - 0.2;
+  small {
+    color: inherit;
+    vertical-align: 0;
+    font-size: 100% / $scale-ratio;
+  }
+}
+
+// Headings loop variables
+$count: 1;
+$heading: 6;
+$font-size: 1rem;
+$font-size-secondary: $font-size;
+
+// Headings loop
+@while $count <=6 {
+  h#{$heading},
+  .h#{$heading} {
+    font-size: $font-size * $scale-ratio;
+  } 
+  
+  // Larger than mobile
+  @media only screen and (min-width: $bp-larger-than-mobile) {
+    h#{$heading},
+    .h#{$heading} {
+      font-size: $font-size-secondary * $scale-ratio-secondary;
+    }
+  }
+  
+  $font-size: $font-size * $scale-ratio;
+  $font-size-secondary: $font-size-secondary * $scale-ratio-secondary;
+  $count: $count+1;
+  $heading: $heading - 1;
+}
+
+blockquote {
+  margin: 0 0 1rem;
+  padding: ($global-spacing / 4) $global-spacing ($global-spacing / 4) $global-spacing;
+  border-left: 1px solid $color-border;
+}
+
+blockquote>p:last-of-type {
+  margin-bottom: 0;
+}
+
+blockquote,
+blockquote p {
+  line-height: 1.6;
+  color: lighten($color-font, 10);
+}
+
+cite {
+  display: block;
+  font-size: rem-calc(14);
+  color: #8a8a8a;
+}
+
+cite:before {
+  content: "— ";
+}
