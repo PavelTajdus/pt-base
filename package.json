@@ -1,5 +1,5 @@
 {
-  "name": "swisscss-knife",
+  "name": "pt-base",
   "version": "1.0.0",
   "description": "CSS starting point based on getskeleton.com and foundation for sites.",
   "main": "gulpfile.js",
